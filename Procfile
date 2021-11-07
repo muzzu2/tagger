@@ -1,1 +1,1 @@
-worker: python3 bot.py
+decode: python3 bot.py
