@@ -16,13 +16,13 @@ LOGGER = logging.getLogger(__name__)
 api_id = int(os.environ.get("APP_ID"))
 api_hash = os.environ.get("API_HASH")
 bot_token = os.environ.get("TOKEN")
-client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
+decodebot = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
 moment_worker = []
 
 
 #start
-@client.on(events.NewMessage(pattern="^/start$"))
+@decodebot.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   await event.reply("^_^ Hey, Welcome To TAG Help Bot's Menu\nI can tag 15,000 Members in Group and 300 Members In Channel.\nNeed Help /help ",
                     buttons=(
@@ -38,7 +38,7 @@ async def start(event):
                    )
 
 #help
-@client.on(events.NewMessage(pattern="^/help$"))
+@decodebot.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
   helptext = "**Tag Help Bot's Help Menu**\n\nCommand: /all \n You can use this command with text you want to tell others. \n`Example: /all Good morning!` \nYou can use this command as an answer. any message Bot will tag users to replied message"
   await event.reply(helptext,
@@ -59,7 +59,7 @@ async def help(event):
 #bsdk credit de dena verna maa chod dege
 
 #tag
-@client.on(events.NewMessage(pattern="^/tagall|/call|/tall|/all|#all|@all?(.*)"))
+@decodebot.on(events.NewMessage(pattern="^/tagall|/call|/tall|/all|#all|@all?(.*)"))
 async def mentionall(event):
   global moment_worker
   if event.is_private:
@@ -119,8 +119,22 @@ async def mentionall(event):
         usrtxt = ""
 
 
+# Cancle 
+
+@decodebot.on(events.NewMessage(pattern="^/cancel$"))
+async def cancel_spam(event):
+  if not event.chat_id in spam_chats:
+    return await event.respond('__There is no proccess on going...__')
+  else:
+    try:
+      spam_chats.remove(event.chat_id)
+    except:
+      pass
+    return await event.respond('🖲 Stoped')
+
+
 #telegraph 
-@client.on(events.NewMessage(pattern="^/t$"))
+@decodebot.on(events.NewMessage(pattern="^/t$"))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -164,4 +178,4 @@ async def telegraph(client, message):
 
 print("Started Successfully Join Support")
 print("¯\_(ツ)_/¯ Need Help Join @DeCodeSupport")
-client.run_until_disconnected()
+decodebot.run_until_disconnected()
