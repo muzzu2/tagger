@@ -88,14 +88,14 @@ async def mentionall(event):
     moment_worker.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in client.iter_participants(event.chat_id):
+    async for usr in decodebot.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await event.respond("Stopped!")
         return
       if usrnum == 5:
-        await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
+        await decodebot.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
@@ -106,14 +106,14 @@ async def mentionall(event):
  
     usrnum = 0
     usrtxt = ""
-    async for usr in client.iter_participants(event.chat_id):
+    async for usr in decodebot.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await event.respond("Stopped")
         return
       if usrnum == 5:
-        await client.send_message(event.chat_id, usrtxt, reply_to=msg)
+        await decodebot.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
@@ -130,49 +130,8 @@ async def cancel_spam(event):
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await event.respond('🖲 Stoped')
+    return await event.respond('**__Stoped__**\n\n**__Powered By:__ @TeamDeeCode**')
 
-
-#telegraph 
-@decodebot.on(events.NewMessage(pattern="^/t$"))
-async def telegraph(client, message):
-    replied = message.reply_to_message
-    if not replied:
-        await message.reply("Reply to a supported media file")
-        return
-    if not (
-        (replied.photo and replied.photo.file_size <= 5242880)
-        or (replied.animation and replied.animation.file_size <= 5242880)
-        or (
-            replied.video
-            and replied.video.file_name.endswith(".mp4")
-            and replied.video.file_size <= 5242880
-        )
-        or (
-            replied.document
-            and replied.document.file_name.endswith(
-                (".jpg", ".jpeg", ".png", ".gif", ".mp4"),
-            )
-            and replied.document.file_size <= 5242880
-        )
-    ):
-        await message.reply("Not supported!")
-        return
-    download_location = await client.download_media(
-        message=message.reply_to_message,
-        file_name="root/downloads/",
-    )
-    try:
-        response = upload_file(download_location)
-    except Exception as document:
-        await message.reply(message, text=document)
-    else:
-        await message.reply(
-            f"**Hey You...!\nLoook At This\n\n👉 https://telegra.ph{response[0]}**",
-            disable_web_page_preview=True,
-        )
-    finally:
-        os.remove(download_location)
 
 
 
