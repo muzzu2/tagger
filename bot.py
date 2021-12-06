@@ -66,7 +66,7 @@ async def mentionall(event):
     return await event.respond("Use This In Channel or Group!")
   
   admins = []
-  async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+  async for admin in decodebot.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
     return await event.respond("Only Admin can use it.")
