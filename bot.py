@@ -27,8 +27,8 @@ async def start(event):
   await event.reply("^_^ Hey, Welcome To TAG Help Bot's Menu\nI can tag 15,000 Members in Group and 300 Members In Channel.\nNeed Help /help ",
                     buttons=(
                       [
-                         Button.url('📣 UPDATES', 'https://t.me/DeeCodeBots'), 
-                         Button.url('⭐SUPPORT', 'https://t.me/DeCodeSupport'), 
+                         Button.url('Owner', 'https://t.me/Muzzu5'), 
+                         Button.url('SUPPORT', 'https://t.me/hbgtech'), 
                       ], 
                       [
                         Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/MEMBER_TAGERBOT?startgroup=true'),   
@@ -44,11 +44,11 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('📣 UPDATES', 'https://t.me/DeeCodeBots'), 
-                         Button.url('⭐SUPPORT', 'https://t.me/DeCodeSupport'), 
+                         Button.url('Owner', 'https://t.me/Muzzu5'), 
+                         Button.url('SUPPORT', 'https://t.me/hbgtech'), 
                       ], 
                       [
-                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/MEMBER_TAGERBOT?startgroup=true'),   
+                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/taggallnewbot?startgroup=true'),   
                       ]
                    ), 
                     link_preview=False
@@ -130,11 +130,11 @@ async def cancel_spam(event):
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await event.respond('**__Stoped__**\n\n**__Powered By:__ @TeamDeeCode**')
+    return await event.respond('**__Stoped__**\n\n**__Powered By:__ @Muzzu5**')
 
 
 
 
 print("Started Successfully Join Support")
-print("¯\_(ツ)_/¯ Need Help Join @DeCodeSupport")
+print("¯\_(ツ)_/¯ Need Help Join @Hbgtech")
 decodebot.run_until_disconnected()
