@@ -1,6 +1,6 @@
 {
   "logo":"https://telegra.ph/file/91003e77f23a2f2a03229.jpg",
-  "name": "MEMBER TAGGER",
+  "name": "TAGGER MEMBERS",
   "description": "A member tagger bot for telegram Groups.",
   "env": {
     "TOKEN": {
