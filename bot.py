@@ -27,11 +27,11 @@ async def start(event):
   await event.reply("^_^ Hey, Welcome To TAG Help Bot's Menu\nI can tag 15,000 Members in Group and 300 Members In Channel.\nNeed Help /help ",
                     buttons=(
                       [
-                         Button.url('Owner', 'https://t.me/Muzzu5'), 
-                         Button.url('SUPPORT', 'https://t.me/hbgtech'), 
+                         Button.url('Owner', 'https://t.me/Muzzu6'), 
+                         Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
                       [
-                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/MEMBER_TAGERBOT?startgroup=true'),   
+                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Beestaggbot?startgroup=true'),   
                       ]
                    ), 
                     link_preview=False
@@ -44,11 +44,11 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('Owner', 'https://t.me/Muzzu5'), 
-                         Button.url('SUPPORT', 'https://t.me/hbgtech'), 
+                         Button.url('Owner', 'https://t.me/Muzzu6'), 
+                         Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
-                      [
-                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/taggallnewbot?startgroup=true'),   
+                 Muzzu6[
+                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Beestaggbot?startgroup=true'),   
                       ]
                    ), 
                     link_preview=False
@@ -94,7 +94,7 @@ async def mentionall(event):
       if event.chat_id not in moment_worker:
         await event.respond("Stopped!")
         return
-      if usrnum == 5:
+      if usrnum == 10:
         await decodebot.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
         await asyncio.sleep(2)
         usrnum = 0
@@ -112,7 +112,7 @@ async def mentionall(event):
       if event.chat_id not in moment_worker:
         await event.respond("Stopped")
         return
-      if usrnum == 5:
+      if usrnum == 10:
         await decodebot.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
@@ -130,11 +130,11 @@ async def cancel_spam(event):
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await event.respond('**__Stoped__**\n\n**__Powered By:__ @Muzzu5**')
+    return await event.respond('**__Stoped__**\n\n**__Powered By:__ @Muzzu6**')
 
 
 
 
 print("Started Successfully Join Support")
-print("¯\_(ツ)_/¯ Need Help Join @Hbgtech")
+print("¯\_(ツ)_/¯ Need Help Join @bees_tech")
 decodebot.run_until_disconnected()
