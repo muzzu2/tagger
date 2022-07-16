@@ -31,7 +31,7 @@ async def start(event):
                          Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
                       [
-                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Beestaggbot?startgroup=true'),   
+                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Taggerqueenbot?startgroup=true'),   
                       ]
                    ), 
                     link_preview=False
@@ -48,7 +48,7 @@ async def help(event):
                          Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
                  Muzzu6[
-                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Beestaggbot?startgroup=true'),   
+                        Button.url('➕ ADD ME TO YOUR GROUP', 'https://t.me/Taggerqueenbot?startgroup=true'),   
                       ]
                    ), 
                     link_preview=False
