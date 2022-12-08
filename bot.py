@@ -24,10 +24,10 @@ moment_worker = []
 #start
 @decodebot.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("^_^ Hey, Welcome To TAG Help Bot's Menu\nI can tag 15,000 Members in Group and 300 Members In Channel.\nNeed Help /help ",
+  await event.reply("^_^ Hey, Welcome To TAG Help Bot's Menu\nI can tag 15,000 Members in Group and 300 Members In Channel.If you have any doubt ask our tech group🤗",
                     buttons=(
                       [
-                         Button.url('Owner', 'https://t.me/Muzzu6'), 
+                         Button.url('Owner', 'https://t.me/iam_muzzu'), 
                          Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
                       [
@@ -44,7 +44,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('Owner', 'https://t.me/Muzzu6'), 
+                         Button.url('Owner', 'https://t.me/iam_muzzu'), 
                          Button.url('SUPPORT', 'https://t.me/bees_tech'), 
                       ], 
                  Muzzu6[
